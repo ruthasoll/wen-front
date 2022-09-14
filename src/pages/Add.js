@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [salary, setSalary] = useState('');
+    const [phoneNumber, setphoneNumber] = useState('');
     const [date, setDate] = useState('');
 
     const textInput = useRef(null);
@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 
     const handleAdd = e => {
         e.preventDefault();
-        if (!firstName || !lastName || !email || !salary || !date) {
+        if (!firstName || !lastName || !email || !phoneNumber || !date) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Error!',
@@ -31,7 +31,7 @@ import Swal from 'sweetalert2';
             firstName,
             lastName,
             email,
-            salary,
+            phoneNumber,
             date
         }
         employees.push(newEmployee);
@@ -76,13 +76,13 @@ import Swal from 'sweetalert2';
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-                <label htmlFor="salary">Salary ($)</label>
+                <label htmlFor="salary">PhoneNo(#)</label>
                 <input
-                    id="salary"
+                    id="phoneNumber"
                     type="number"
                     name="salary"
-                    value={salary}
-                    onChange={e => setSalary(e.target.value)}
+                    value={phoneNumber}
+                    onChange={e => setphoneNumber(e.target.value)}
                 />
                 <label htmlFor="date">Date</label>
                 <input

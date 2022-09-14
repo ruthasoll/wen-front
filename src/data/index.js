@@ -1,19 +1,19 @@
 const employeesData = [
     {
       id: 1,
-      firstName: 'Susan',
-      lastName: 'Jordon',
-      email: 'susan@example.com',
-      salary: '95000',
-      date: '2019-04-11'
+      firstName: 'Ruth',
+      lastName: 'Solomon',
+      email: 'ruths9317@gmail.com',
+      phoneNumber: '0991148905',
+      DoB: '1999-06-10'
     },
     {
       id: 2,
-      firstName: 'Adrienne',
-      lastName: 'Doak',
-      email: 'adrienne@example.com',
-      salary: '80000',
-      date: '2019-04-17'
+      firstName: 'Tsion',
+      lastName: 'Solomon',
+      email: 'Stsion@gmail.com',
+      phoneNumber: '0988488383',
+      date: '2004-10-4'
     },
     {
       id: 3,

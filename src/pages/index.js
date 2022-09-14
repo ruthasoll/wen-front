@@ -1,4 +1,6 @@
 import React,{useState} from "react";
+import Swal from 'sweetalert2';
+
 import Header from "./Header";
 import List from "./List";
 import Add from "./Add";
@@ -12,11 +14,37 @@ function Dashboard(){
     const [isAdding , setIsAdding] = useState(false);
     const [isEditing , setIsEditing] = useState(false);
     
-    const handleEdit = () =>{
+    const handleEdit = (id) =>{
 
+        const [employee] = employees.filter(employee => employee.id === id);
+
+        setSelectedEmployee(employee);
+        setIsEditing(true);
     }
 
-    const hanldeDelete = () => {
+    const hanldeDelete = (id) => {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+        }).then(result => {
+            if (result.value) {
+                const [employee] = employees.filter(employee => employee.id === id);
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Deleted!',
+                    text: `${employee.firstName} ${employee.lastName}'s data has been deleted.`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+
+                setEmployees(employees.filter(employee => employee.id !== id));
+            }
+        });
 
     }
 return(
@@ -44,7 +72,7 @@ return(
     {isEditing &&(
         <Edit
         employees = {employees}
-        setSelectedEmployee = {setSelectedEmployee}
+        selectedEmployee  = {selectedEmployee}
         setEmployees = {setEmployees}
         setIsEditing = {setIsEditing}
         />

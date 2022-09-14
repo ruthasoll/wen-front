@@ -22,11 +22,11 @@ import React from "react";
         employees.map((employee,i)=>(
             <tr key={employee.id}>
                 <td>{i+1}</td>
-                <td>employee.FirstName</td>
-                <td>employee.LastName</td>
-                <td>employee.Email</td>
-                <td>employee.phone.no</td>
-                <td>employee.DoB</td>
+                <td>{employee.firstName}</td>
+                <td>{employee.lastName}</td>
+                <td>{employee.email}</td>
+                <td>{employee.phoneNumber}</td>
+                <td>{employee.DoB}</td>
                 <td className="text-right">
                     <button onClick={() => handleEdit(employee.id)} className="button muted-button">Edit</button>
                 </td>
